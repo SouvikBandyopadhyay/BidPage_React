@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import CountDownClock from './CountDownClock';
+
 
 const Placebit = ({state,setState,text,prevstate,setprevState}) => {
     const [error,seterror]=useState(false);
+
 
     let navigate = useNavigate();
     
@@ -25,8 +28,11 @@ const Placebit = ({state,setState,text,prevstate,setprevState}) => {
     const number_changed=(event)=> {    
         setState(event.target.value);  
     }
+    var today= new Date();
+
     return ( 
         <div className='midCont'>
+            <CountDownClock targetDate={today}/>
             {text && <div>
                 <h1> Bid is created {prevstate}</h1>
                 </div>
@@ -43,3 +49,6 @@ const Placebit = ({state,setState,text,prevstate,setprevState}) => {
 }
  
 export default Placebit;
+
+
+

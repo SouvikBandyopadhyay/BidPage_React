@@ -55,3 +55,7 @@ input{
 .midCont{
   padding-top: 5rem;
 }
+.show-counter{
+  display: flex;
+  justify-content: flex-end;
+}
